@@ -1,0 +1,90 @@
+/* components/Navbar.module.css */
+
+.navbar {
+  background-color: #000; /* Fondo negro */
+  color: #d4af37; /* Color dorado para el texto */
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  opacity: 0.9;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Sombra sutil para darle profundidad */
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.logo {
+  font-size: 2.5rem; /* Ajustado para El Messiri, experimenta si quieres más grande */
+  font-weight: 700; /* El Messiri se ve muy bien en negrita */
+  color: #d4af37;
+  text-decoration: none;
+  /* CAMBIO AQUÍ: Aplica la fuente El Messiri */
+  font-family: var(--font-el-messiri); /* Usa la nueva variable CSS */
+  letter-spacing: 1.5px; /* Un poco de espaciado para destacar */
+  text-transform: uppercase; /* El Messiri también luce bien en mayúsculas */
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navLink {
+  color: #d4af37;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  position: relative;
+  font-family: var(--font-inter, sans-serif); /* Mantén una fuente sans-serif legible para los links */
+}
+
+/* El pseudo-elemento para la línea */
+.navLink::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px; /* Distancia del texto */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #d4af37;
+  transition: width 0.3s ease-in-out;
+}
+
+/* Al pasar el mouse, la línea se expande */
+.navLink:hover::after {
+  width: 100%;
+}
+
+.navLink:hover {
+  color: #fff; /* Blanco o un dorado más claro al pasar el mouse */
+}
+
+.cartIcon {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #d4af37;
+}
+
+/* Puedes añadir media queries para hacerlo responsive en pantallas pequeñas */
+@media (max-width: 768px) {
+  .navLinks {
+    display: none; /* Oculta los links en móviles para un menú de hamburguesa */
+  }
+
+  .logo {
+    font-size: 2rem; /* Ajusta el tamaño de la fuente del logo en pantallas más pequeñas */
+  }
+
+  /* Aquí podrías añadir un botón de menú para mostrar los links */
+}
