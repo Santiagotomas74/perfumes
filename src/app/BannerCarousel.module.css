@@ -30,7 +30,7 @@
 
 .bannerImage {
   object-fit: cover;
-  filter: brightness(0.6); /* Oscurece un poco la imagen para que el texto resalte */
+  filter: brightness(0.8); /* Oscurece un poco la imagen para que el texto resalte */
 }
 
 .bannerContent {

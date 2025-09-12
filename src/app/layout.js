@@ -1,6 +1,7 @@
 // app/layout.js
 import { El_Messiri , Inter, Aref_Ruqaa_Ink } from "next/font/google"; // Importa Aref_Ruqaa_Ink
 import "./globals.css";
+import  WhatsApp  from "./WhatsappPedido";
 
 
 const elMessiri = El_Messiri({
@@ -39,6 +40,7 @@ export default function RootLayout({ children }) {
       <body>
         {/* Tu Navbar se renderiza aquí */}
         {children}
+        <WhatsApp/>
       </body>
     </html>
   );
