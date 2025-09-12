@@ -41,6 +41,19 @@ export default function PerfumesElegant() {
   // Marcas y géneros
   const brands = ["Todos", ...new Set(perfumes.map((p) => p.brand))];
   const genders = ["Todos", "Hombre", "Mujer", "Unisex"];
+  // ✅ useEffect solo corre en cliente, evitando problemas en build
+  useEffect(() => {
+    if (!searchParams) return;
+
+    const filter = searchParams.get("filter");
+    if (filter) {
+      const normalized =
+        filter.charAt(0).toUpperCase() + filter.slice(1).toLowerCase();
+      if (["Hombre", "Mujer", "Unisex"].includes(normalized)) {
+        setSelectedGender(normalized);
+      }
+    }
+  }, [searchParams]);
 
   // 🔑 Detectar filtro de la URL
   useEffect(() => {

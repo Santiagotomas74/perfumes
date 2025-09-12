@@ -13,6 +13,19 @@ import MagicBento from "./MagicBento"
 export default function SingleProductPage() {
   const searchParams = useSearchParams();
 const router = useRouter();
+// ✅ useEffect solo corre en cliente, evitando problemas en build
+  useEffect(() => {
+    if (!searchParams) return;
+
+    const filter = searchParams.get("filter");
+    if (filter) {
+      const normalized =
+        filter.charAt(0).toUpperCase() + filter.slice(1).toLowerCase();
+      if (["Hombre", "Mujer", "Unisex"].includes(normalized)) {
+        setSelectedGender(normalized);
+      }
+    }
+  }, [searchParams]);
   const items = [
     { icon: <VscHome size={18} />, label: 'Inicio', onClick: () => router.push('/')  },
     { icon: <VscArchive size={18} />, label: 'Productos', onClick: () => router.push('/productos') },
