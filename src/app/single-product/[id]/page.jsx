@@ -7,7 +7,7 @@ import Dock from './Dock';
 import { VscHome, VscArchive, VscAccount, VscSettingsGear } from 'react-icons/vsc';
 import { useRouter } from 'next/navigation';
 import MagicBento from "./MagicBento"
-
+import { useEffect } from "react";
 
  
 export default function SingleProductPage() {
