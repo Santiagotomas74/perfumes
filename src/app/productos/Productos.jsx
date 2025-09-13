@@ -119,7 +119,7 @@ export default function PerfumesElegant() {
         />
       </div>
 
-      <Box sx={{ px: 10, py: 16, mt: -20 }}>
+      <Box sx={{ px: 2, py: 16, mt: -20 }}>
         {/* Header del filtro */}
         <Box
           sx={{
@@ -273,7 +273,7 @@ export default function PerfumesElegant() {
   sx={{ px: { xs: 0, sm: 1, md: 6 }, mx: "auto" }}
 >
   {filteredPerfumes.map((perfume) => (
-    <Grid item xs={6} sm={6} md={4} lg={3} key={perfume.id}>
+    <Grid item xs={12} sm={6} md={4} lg={3} key={perfume.id}>
       <Card
         onClick={() => handleCardClick(perfume)}
         onMouseEnter={() => handleMouseEnter(perfume.id)}
@@ -305,8 +305,8 @@ export default function PerfumesElegant() {
           }
           alt={perfume.title}
           sx={{
-            height: { xs: 150, sm: 200, md: 320 }, // ajusta altura según tamaño de pantalla
-            width: { xs: 120, sm: 180, md: 320 },
+            height: { xs: 170, sm: 200, md: 320 }, // ajusta altura según tamaño de pantalla
+            width: { xs: 170, sm: 180, md: 320 },
             objectFit: "cover",
             objectPosition: "center center",
             filter:
