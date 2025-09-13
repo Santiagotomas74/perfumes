@@ -54,10 +54,7 @@ const WaveEffect = () => {
         
       </div>
 
-      {/* Footer encima de las olas */}
-        <div style={{ position: "absolute", bottom: 0, left: 0, width: "100%", zIndex: 5 }}>
-          <Footer />
-        </div>
+      
 
     </div>
     </>

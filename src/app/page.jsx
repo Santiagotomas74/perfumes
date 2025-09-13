@@ -5,6 +5,7 @@ import Carrousel from "./Carrousel";
 import LogoSlider from "./Pasarela"
 import Wavify from "./Wavify";
 import Banner from "./Banner"
+import Footer from "./Footer"
 
 import ScrollFloat from './ScrollFloat';
 
@@ -58,7 +59,7 @@ export default function PerfumesElegant() {
  
         <Wavify/>
     
-
+      <Footer />
    
     
     </>
