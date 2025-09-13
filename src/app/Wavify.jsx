@@ -1,6 +1,6 @@
 import React from "react";
 import Wave from "react-wavify"; // Asegúrate de tener 'react-wavify' instalado (npm install react-wavify)
-import Footer from "./Footer"
+
 
 
 const WaveEffect = () => {
@@ -12,7 +12,7 @@ const WaveEffect = () => {
             className="w-full h-auto object-cover mb:20"
         />
     
-    <div style={{ position: "relative", height: "450px", width: "100%", marginTop: "-90px" }}>
+    <div style={{ position: "relative", height: "50px", width: "100%", marginTop: "-90px" }}>
       
       
      

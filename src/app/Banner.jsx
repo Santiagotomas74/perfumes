@@ -3,6 +3,7 @@ import React from "react";
 import { Box, Typography, Grid } from "@mui/material";
 import { keyframes } from "@emotion/react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const fadeInUp = keyframes`
   from { opacity: 0; transform: translateY(40px); }
@@ -46,6 +47,7 @@ export default function PerfumeBanners() {
       container 
  
       sx={{ 
+  
         py: 6, 
        mt:-12,
         
@@ -69,17 +71,15 @@ export default function PerfumeBanners() {
           }}
         >
           {/* La imagen que ocupa todo el contenedor */}
-          <Box
-            component="img"
-            src={banner.img}
-            alt={banner.title}
-            sx={{
-              width: "4000px",
-              height: 600,
-              objectFit: "cover",
-              display: "block",
-            }}
-          />
+         <Box
+  component="img"
+  
+  src={banner.img}
+  alt={banner.title}
+  
+/>
+
+
 
           {/* Overlay de texto superpuesto */}
           <Box

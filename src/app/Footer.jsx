@@ -7,7 +7,10 @@ const Footer = () => {
         El padding horizontal es más pequeño en móviles (px-4) y crece en pantallas grandes (md:px-24).
         El padding vertical es consistente (py-12).
       */}
-      <footer className=" text-gray-300 py-12 px-4 sm:px-6 md:px-24">
+      <footer className="text-gray-300 py-12 px-4 sm:px-6 md:px-24"
+      style={{
+        backgroundColor:"#f2dc7d"
+      }}>
         <div className='border-t border-gray-700 mb-8'> </div>
         
         {/* Contenedor principal del footer.
