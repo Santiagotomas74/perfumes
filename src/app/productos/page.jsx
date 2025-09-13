@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import Products from "./Productos";
 import Navbar from "../Navbar";
 import Galaxy from "./Galaxy";
+import Footer from "./FooterProduct";
 
 export default function ProductsPage() {
   return (
@@ -52,7 +53,9 @@ export default function ProductsPage() {
           <Suspense fallback={<div style={{ color: "#FFD700" }}>Cargando perfumes...</div>}>
             <Products />
           </Suspense>
+           <Footer/>
         </div>
+       
       </div>
     </>
   );

@@ -19,8 +19,9 @@ export default function PerfumesElegant() {
     <Navbar/>
     <Carrousel/>
     <LogoSlider/>
-  
-<div   style={{ marginLeft:"15%", marginTop:"5%", marginBottom: "50px"}}>
+     <div className="   mx-auto flex justify-center items-center">
+    <div className="mt-4">
+ 
 <ScrollFloat
    animationDuration={1}
    ease='back.inOut(2)'
@@ -30,8 +31,9 @@ export default function PerfumesElegant() {
 >
    Explora Nuestras Fragancias Exclusivas!
 </ScrollFloat>
+ 
 </div>
-
+</div>
    <img 
        src="/banner/6.png" 
        alt="Ejemplo de imagen de ancho completo" 
@@ -54,7 +56,7 @@ export default function PerfumesElegant() {
     </div>
    </div>
 
-   <CircularGallery bend={3} textColor="#ffffff" borderRadius={0.05} scrollEase={0.02} />
+   <CircularGallery bend={3} textColor="#ffffff" borderRadius={0.05} scrollEase={0.15} />
 </div>
 
   

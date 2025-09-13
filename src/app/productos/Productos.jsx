@@ -13,7 +13,6 @@ import {
 } from "@mui/material";
 import { keyframes } from "@emotion/react";
 import perfumes from "./dataProduct";
-import Footer from "../Footer";
 import CurvedLoop from "./CurvedLoop";
 
 import {
@@ -267,60 +266,64 @@ export default function PerfumesElegant() {
         </Box>
 
         {/* Grid de perfumes */}
-        <Grid container spacing={3} sx={{ px: 6, mx: "auto" }}>
-          {filteredPerfumes.map((perfume) => (
-            <Grid item xs={12} sm={6} md={4} lg={3} key={perfume.id}>
-              <Card
-                onClick={() => handleCardClick(perfume)}
-                onMouseEnter={() => handleMouseEnter(perfume.id)}
-                onMouseLeave={handleMouseLeave}
-                sx={{
-                  height: 420,
-                  position: "relative",
-                  borderRadius: 3,
-                  overflow: "hidden",
-                  boxShadow: 4,
-                  backgroundColor: "black",
-                  display: "flex",
-                  flexDirection: "column",
-                  animation: `${fadeInLeft} 0.8s ease`,
-                  transition: "transform 0.3s ease, box-shadow 0.3s ease",
-                  cursor: "pointer",
-                  "&:hover": {
-                    transform: "scale(1.03)",
-                    boxShadow: 6,
-                  },
-                }}
-              >
-                <CardMedia
-                  component="img"
-                  image={
-                    hoveredCard === perfume.id && perfume.imgHover
-                      ? perfume.imgHover
-                      : perfume.img
-                  }
-                  alt={perfume.title}
-                  sx={{
-                    height: 320,
-                    width: 320,
-                    objectFit: "cover",
-                    objectPosition: "center center",
-                    filter:
-                      hoveredCard === perfume.id
-                        ? "brightness(1)"
-                        : "brightness(0.9)",
-                    transform:
-                      hoveredCard === perfume.id ? "scale(1.05)" : "none",
-                    transition: "transform 0.4s ease, filter 0.4s ease",
-                  }}
-                />
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
+       {/* Grid de perfumes */}
+<Grid 
+  container 
+  spacing={2} 
+  sx={{ px: { xs: 0, sm: 1, md: 6 }, mx: "auto" }}
+>
+  {filteredPerfumes.map((perfume) => (
+    <Grid item xs={6} sm={6} md={4} lg={3} key={perfume.id}>
+      <Card
+        onClick={() => handleCardClick(perfume)}
+        onMouseEnter={() => handleMouseEnter(perfume.id)}
+        onMouseLeave={handleMouseLeave}
+        sx={{
+          height: 420,
+          position: "relative",
+          borderRadius: 3,
+          overflow: "hidden",
+          boxShadow: 4,
+          backgroundColor: "black",
+          display: "flex",
+          flexDirection: "column",
+          animation: `${fadeInLeft} 0.8s ease`,
+          transition: "transform 0.3s ease, box-shadow 0.3s ease",
+          cursor: "pointer",
+          "&:hover": {
+            transform: "scale(1.03)",
+            boxShadow: 6,
+          },
+        }}
+      >
+        <CardMedia
+          component="img"
+          image={
+            hoveredCard === perfume.id && perfume.imgHover
+              ? perfume.imgHover
+              : perfume.img
+          }
+          alt={perfume.title}
+          sx={{
+            height: { xs: 150, sm: 200, md: 320 }, // ajusta altura según tamaño de pantalla
+            width: { xs: 120, sm: 180, md: 320 },
+            objectFit: "cover",
+            objectPosition: "center center",
+            filter:
+              hoveredCard === perfume.id
+                ? "brightness(1)"
+                : "brightness(0.9)",
+            transform:
+              hoveredCard === perfume.id ? "scale(1.05)" : "none",
+            transition: "transform 0.4s ease, filter 0.4s ease",
+          }}
+        />
+      </Card>
+    </Grid>
+  ))}
+</Grid>
 
-      <Footer />
+      </Box>
     </>
   );
 }
