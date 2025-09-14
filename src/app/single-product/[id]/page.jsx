@@ -133,16 +133,18 @@ const router = useRouter();
     </div>
     
     </div>
-    
+      
+   <div className="fixed bottom-0 inset-x-0 z-[999] md:hidden">
+        <Dock
+          items={items}
+          panelHeight={68}
+          baseItemSize={50}
+          magnification={70}
+        />
+      </div>
           
     </div>
-     <Dock 
-    items={items}
-    panelHeight={68}
-    baseItemSize={50}
-    magnification={70}
-  />
-    
+ 
      </>
   );
 }

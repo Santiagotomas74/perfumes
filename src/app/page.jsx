@@ -6,6 +6,7 @@ import LogoSlider from "./Pasarela"
 import Wavify from "./Wavify";
 import Banner from "./Banner"
 import Footer from "./Footer"
+import  WhatsApp  from "./WhatsappPedido";
 
 import ScrollFloat from './ScrollFloat';
 
@@ -75,7 +76,7 @@ export default function PerfumesElegant() {
     
     <Footer />
    
-    
+    <WhatsApp/>
     </>
    );
 }

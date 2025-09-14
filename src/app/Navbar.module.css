@@ -1,14 +1,12 @@
-/* components/Navbar.module.css */
-
 .navbar {
-  background-color: #000; /* Fondo negro */
-  color: #d4af37; /* Color dorado para el texto */
+  background-color: #000;
+  color: #d4af37;
   padding: 1rem 0;
   position: sticky;
   top: 0;
-  opacity: 0.9;
+  opacity: 0.95;
   z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Sombra sutil para darle profundidad */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .container {
@@ -17,18 +15,17 @@
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1.5rem;
 }
 
 .logo {
-  font-size: 2.5rem; /* Ajustado para El Messiri, experimenta si quieres más grande */
-  font-weight: 700; /* El Messiri se ve muy bien en negrita */
+  font-size: 2rem;
+  font-weight: 700;
   color: #d4af37;
   text-decoration: none;
-  /* CAMBIO AQUÍ: Aplica la fuente El Messiri */
-  font-family: var(--font-el-messiri); /* Usa la nueva variable CSS */
-  letter-spacing: 1.5px; /* Un poco de espaciado para destacar */
-  text-transform: uppercase; /* El Messiri también luce bien en mayúsculas */
+  font-family: var(--font-el-messiri);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
 
 .navLinks {
@@ -43,48 +40,67 @@
   color: #d4af37;
   text-decoration: none;
   font-size: 1rem;
-  transition: color 0.3s ease;
   position: relative;
-  font-family: var(--font-inter, sans-serif); /* Mantén una fuente sans-serif legible para los links */
+  transition: color 0.3s ease;
 }
 
-/* El pseudo-elemento para la línea */
 .navLink::after {
   content: '';
   position: absolute;
   width: 0;
   height: 2px;
-  bottom: -5px; /* Distancia del texto */
+  bottom: -5px;
   left: 50%;
   transform: translateX(-50%);
   background-color: #d4af37;
   transition: width 0.3s ease-in-out;
 }
 
-/* Al pasar el mouse, la línea se expande */
 .navLink:hover::after {
   width: 100%;
 }
 
 .navLink:hover {
-  color: #fff; /* Blanco o un dorado más claro al pasar el mouse */
+  color: #fff;
 }
 
-.cartIcon {
-  font-size: 1.5rem;
-  cursor: pointer;
+/* Botón hamburguesa */
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
   color: #d4af37;
+  font-size: 2rem;
+  cursor: pointer;
 }
 
-/* Puedes añadir media queries para hacerlo responsive en pantallas pequeñas */
+/* ------------------- RESPONSIVE ------------------- */
 @media (max-width: 768px) {
+  .menuButton {
+    display: block; /* aparece en mobile */
+  }
+
   .navLinks {
-    display: none; /* Oculta los links en móviles para un menú de hamburguesa */
+    display: none; /* oculto por defecto */
+    flex-direction: column;
+    gap: 1.5rem;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #000000;
+    width: 100%;
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.4);
   }
 
-  .logo {
-    font-size: 2rem; /* Ajusta el tamaño de la fuente del logo en pantallas más pequeñas */
+  .showMenu {
+    display: flex; /* se abre el menú */
+    animation: fadeDown 0.3s ease;
   }
 
-  /* Aquí podrías añadir un botón de menú para mostrar los links */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 }

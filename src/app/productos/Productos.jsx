@@ -20,6 +20,9 @@ import {
   LocalOffer as LocalOfferIcon,
   Person as PersonIcon,
 } from "@mui/icons-material";
+import { useMediaQuery, useTheme } from "@mui/material";
+
+
 
 // Animación
 const fadeInLeft = keyframes`
@@ -107,7 +110,9 @@ export default function PerfumesElegant() {
     setHoveredCard(null);
     setShowContent(null);
   };
-
+  // dentro de tu componente:
+const theme = useTheme();
+const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <>
       <div style={{ marginTop: "-150px" }}>
@@ -265,12 +270,10 @@ export default function PerfumesElegant() {
           </Stack>
         </Box>
 
-        {/* Grid de perfumes */}
-       {/* Grid de perfumes */}
-<Grid 
+   <Grid 
   container 
   spacing={2} 
-  sx={{ px: { xs: 0, sm: 1, md: 6 }, mx: "auto" }}
+  sx={{ px: { xs: 0, sm: 5, md: 10 }, mx: "auto" }}
 >
   {filteredPerfumes.map((perfume) => (
     <Grid item xs={12} sm={6} md={4} lg={3} key={perfume.id}>
@@ -279,7 +282,7 @@ export default function PerfumesElegant() {
         onMouseEnter={() => handleMouseEnter(perfume.id)}
         onMouseLeave={handleMouseLeave}
         sx={{
-          height: 420,
+          height: { xs: "auto", md: 420 }, // auto en mobile, fijo en desktop
           position: "relative",
           borderRadius: 3,
           overflow: "hidden",
@@ -305,8 +308,8 @@ export default function PerfumesElegant() {
           }
           alt={perfume.title}
           sx={{
-            height: { xs: 170, sm: 200, md: 320 }, // ajusta altura según tamaño de pantalla
-            width: { xs: 170, sm: 180, md: 320 },
+            height: { xs: 170, sm: 200, md: 320 },
+            width: { xs: "100%", md: 320 },
             objectFit: "cover",
             objectPosition: "center center",
             filter:
@@ -318,10 +321,55 @@ export default function PerfumesElegant() {
             transition: "transform 0.4s ease, filter 0.4s ease",
           }}
         />
+{(isMobile || showContent === perfume.id) && (
+  <CardContent
+    sx={(theme) => ({
+      backgroundColor: "rgba(0, 0, 0, 0.78)",
+      color: "#FFD700",
+      display: "flex",
+      flexDirection: "column",
+      p: 2,
+      animation: `${fadeInLeft} 0.5s ease`,
+      [theme.breakpoints.up("md")]: {
+        position: "absolute",
+        bottom: 0,
+        left: 0,
+        width: "100%",
+      },
+      [theme.breakpoints.down("sm")]: {
+        position: "relative",
+        width: "100%",
+      },
+    })}
+  >
+    <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+      {perfume.title}
+    </Typography>
+    <Typography variant="body2">
+      {perfume.brand} | {perfume.description}
+    </Typography>
+
+    <Typography
+      variant="h6"
+      sx={{
+        fontWeight: "bold",
+        mt: { xs: 1, md: 0 },
+        right: { md: 20 },
+        bottom: { md: 20 },
+        position: { md: "absolute", xs: "relative" },
+        textAlign: { xs: "right", md: "unset" },
+      }}
+    >
+      ${perfume.price.toLocaleString()}
+    </Typography>
+  </CardContent>
+)}
+
       </Card>
     </Grid>
   ))}
 </Grid>
+
 
       </Box>
     </>

@@ -5,6 +5,7 @@ import Products from "./Productos";
 import Navbar from "../Navbar";
 import Galaxy from "./Galaxy";
 import Footer from "./FooterProduct";
+import  WhatsApp  from "../WhatsappPedido";
 
 export default function ProductsPage() {
   return (
@@ -23,7 +24,7 @@ export default function ProductsPage() {
         >
           <Galaxy
             particleColors={["#ffffff", "#ffffff"]}
-            particleCount={200}
+            particleCount={1000}
             particleSpread={10}
             speed={0.1}
             particleBaseSize={100}
@@ -57,6 +58,7 @@ export default function ProductsPage() {
         </div>
        
       </div>
+        <WhatsApp/>
     </>
   );
 }
