@@ -43,6 +43,26 @@ const nextConfig = {
         hostname: 'cdn.awsli.com.br',
         pathname: '/**',
       },
+        {
+        protocol: 'https',
+        hostname: 'www.numonday.com',
+        pathname: '/**',
+      },
+       {
+        protocol: 'https',
+        hostname: 'm.media-amazon.com',
+        pathname: '/**',
+      },
+       {
+        protocol: 'https',
+        hostname: 'aromatica.cr',
+        pathname: '/**',
+      },
+       {
+        protocol: 'https',
+        hostname: 'leparfumpr.com',
+        pathname: '/**',
+      },
     ],
   },
 };
