@@ -132,16 +132,17 @@ const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
      
 
-      <div style={{ marginTop: "-150px" }}>
-        <CurvedLoop
-          marqueeText="✦ NUESTROS ✦ PRODUCTOS"
-          speed={1.5}
-          curveAmount={200}
-          interactive={false}
-        />
-      </div>
+     <Box sx={{ mt: { xs: "-200px", sm: 0 } }}>
+  <CurvedLoop
+    marqueeText="✦ NUESTROS ✦ PRODUCTOS"
+    speed={1.5}
+    curveAmount={200}
+    interactive={false}
+  />
+</Box>
 
-      <Box sx={{ px: 2, py: 16, mt: -20 }}>
+
+      <Box sx={{  px: 2, py: 16, mt: { xs: "-300px", sm: -20 } }}>
         {/* Header del filtro */}
         <Box
           sx={{
