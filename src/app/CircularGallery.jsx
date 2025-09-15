@@ -340,7 +340,7 @@ class App {
   }
   createMedias(items, bend = 1, textColor, borderRadius, font) {
     const defaultItems = [
-      { image: `https://http2.mlstatic.com/D_NQ_NP_847626-MLA89161293347_082025-O.webp`, text: 'Venus De Milo' },
+      { image: `https://aromatica.cr/cdn/shop/files/24-Carat-Pure-Gold-EDT-para-hombre-100-ml-Aromatica-CR-275152664.jpg?v=1735755810&width=416`, text: '24 Carat Pure Gold' },
       { image: `https://perfumescardales.com.ar/wp-content/uploads/2023/10/tobacco-4.jpg`, text: 'Monarch' },
       { image: `https://perfumescardales.com.ar/wp-content/uploads/2024/01/coctail-6.jpg`, text: 'Cocktail' },
       { image: `https://perfumescardales.com.ar/wp-content/uploads/2024/02/stallion-53-1.jpg`, text: 'STALLION 53' },
@@ -351,7 +351,7 @@ class App {
       { image: `https://perfumescardales.com.ar/wp-content/uploads/2023/03/eternal-oud-web-1.jpg`, text: 'ETERNAL OUD' },
       { image: `https://www.intenseoud.com/cdn/shop/files/4_e299dbcc-2c82-46e9-9005-1dc72fde4171.jpg?v=1729633508`, text: 'Meethaq Extrait De Rouge' },
       { image: `https://perfumescardales.com.ar/wp-content/uploads/2024/04/shahama-2.jpg`, text: 'SHAHAMA' },
-      { image: `https://perfumescardales.com.ar/wp-content/uploads/2024/05/amber-wave-1.jpg`, text: 'AMBER WAVE' }
+      { image: `https://perfumescardales.com.ar/wp-content/uploads/2024/12/noble-blush-1.jpg`, text: 'Bade al Oud Noble Blush' }
     ];
     const galleryItems = items && items.length ? items : defaultItems;
     this.mediasImages = galleryItems.concat(galleryItems);

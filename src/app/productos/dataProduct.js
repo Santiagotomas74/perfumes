@@ -16,23 +16,7 @@ const perfumes = [
       nota3:"",
 
     },
-    {
-      id: 2,
-      title: "French Avenue",
-      description: "EDP | 100 ml",
-      brand: "Venus De Milo",
-      price: 100000,
-      img: "https://acdn-us.mitiendanube.com/stores/002/708/808/products/arabe-2025-07-19t161958-136-32dfc0a2b515e645a217529539838864-1024-1024.png",
-      imgHover: "https://http2.mlstatic.com/D_NQ_NP_847626-MLA89161293347_082025-O.webp",
-      gender: "Mujer",
-      img2:"",
-      img3:"",
-      img4:"",
-      nota1:"",
-      nota2:"",
-      nota3:"",
-
-    },
+    
     {
       id: 3,
       title: "Monarch Red Tobacco ",
@@ -194,22 +178,7 @@ const perfumes = [
       nota2:"",
       nota3:"",
     },
-    {
-      id: 13,
-      title: "Amber Wave",
-      description: "EDP | 100 ml",
-      brand: "Matin & Martin",
-      gender: "Mujer",
-      price: 75000,
-      img: "https://perfumescardales.com.ar/wp-content/uploads/2024/05/Perfumes-Decants-23.jpg",
-      imgHover: "https://perfumescardales.com.ar/wp-content/uploads/2024/05/amber-wave-1.jpg",
-       img2:"https://perfumescardales.com.ar/wp-content/uploads/2024/05/amber-wave-2.jpg",
-      img3:"https://perfumescardales.com.ar/wp-content/uploads/2024/05/amber-wave-3.jpg",
-      img4:"https://perfumescardales.com.ar/wp-content/uploads/2024/05/amber-wave-4.jpg",
-      nota1:"AMBER WAVE EAU DE PARFUM de Matin Martin es una fragancia de la familia olfativa Ámbar Amaderada para Hombres y Mujeres. Las Notas de Salida son azafrán y naranja; las Notas de Corazón son cuero, gamuza, azúcar y jazmín; las Notas de Fondo son cuero, ambroxan y ámbar. Sumérgete en el hechizo cautivador de Amber Wave, una sinfonía olfativa que despierta la pasión y el deseo más profundo. El azafrán y la naranja entrelazan sus notas en una danza tentadora, mientras el cuero y la gamuza añaden una sensualidad ahumada y misteriosa. El toque dulce del azúcar es como un susurro seductor en el aire, mientras que el jazmín despliega su aroma floral con elegancia y poder. El ambroxan y el ámbar envuelven la piel en un abrazo cálido y envolvente, dejando una estela adictiva que perdura en la memoria, invitando a explorar sus profundidades una y otra vez. Déjate envolver por la seducción etérea de Amber Wave y descubre el poder de tu magnetismo interior!!",
-      nota2:"",
-      nota3:"",
-    },
+    
     {
       id: 14,
       title: "Al Qiam Gold",
@@ -436,3 +405,40 @@ const perfumes = [
     },
   ];
   export default perfumes;
+
+  /*
+{
+      id: 2,
+      title: "French Avenue",
+      description: "EDP | 100 ml",
+      brand: "Venus De Milo",
+      price: 100000,
+      img: "https://acdn-us.mitiendanube.com/stores/002/708/808/products/arabe-2025-07-19t161958-136-32dfc0a2b515e645a217529539838864-1024-1024.png",
+      imgHover: "https://http2.mlstatic.com/D_NQ_NP_847626-MLA89161293347_082025-O.webp",
+      gender: "Mujer",
+      img2:"",
+      img3:"",
+      img4:"",
+      nota1:"",
+      nota2:"",
+      nota3:"",
+
+    },
+
+    {
+      id: 13,
+      title: "Amber Wave",
+      description: "EDP | 100 ml",
+      brand: "Matin & Martin",
+      gender: "Mujer",
+      price: 75000,
+      img: "https://perfumescardales.com.ar/wp-content/uploads/2024/05/Perfumes-Decants-23.jpg",
+      imgHover: "https://perfumescardales.com.ar/wp-content/uploads/2024/05/amber-wave-1.jpg",
+       img2:"https://perfumescardales.com.ar/wp-content/uploads/2024/05/amber-wave-2.jpg",
+      img3:"https://perfumescardales.com.ar/wp-content/uploads/2024/05/amber-wave-3.jpg",
+      img4:"https://perfumescardales.com.ar/wp-content/uploads/2024/05/amber-wave-4.jpg",
+      nota1:"AMBER WAVE EAU DE PARFUM de Matin Martin es una fragancia de la familia olfativa Ámbar Amaderada para Hombres y Mujeres. Las Notas de Salida son azafrán y naranja; las Notas de Corazón son cuero, gamuza, azúcar y jazmín; las Notas de Fondo son cuero, ambroxan y ámbar. Sumérgete en el hechizo cautivador de Amber Wave, una sinfonía olfativa que despierta la pasión y el deseo más profundo. El azafrán y la naranja entrelazan sus notas en una danza tentadora, mientras el cuero y la gamuza añaden una sensualidad ahumada y misteriosa. El toque dulce del azúcar es como un susurro seductor en el aire, mientras que el jazmín despliega su aroma floral con elegancia y poder. El ambroxan y el ámbar envuelven la piel en un abrazo cálido y envolvente, dejando una estela adictiva que perdura en la memoria, invitando a explorar sus profundidades una y otra vez. Déjate envolver por la seducción etérea de Amber Wave y descubre el poder de tu magnetismo interior!!",
+      nota2:"",
+      nota3:"",
+    },
+  */
