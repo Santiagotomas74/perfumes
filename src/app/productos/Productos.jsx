@@ -132,18 +132,113 @@ const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
      
 
-     <Box sx={{ mt: { xs: "-200px", sm: 0 } }}>
-  <CurvedLoop
-    marqueeText="✦ NUESTROS ✦ PRODUCTOS"
-    speed={1.5}
-    curveAmount={200}
-    interactive={false}
-  />
-</Box>
+     
 
 
-      <Box sx={{  px: 2, py: 16, mt: { xs: "-300px", sm: -20 } }}>
-        {/* Header del filtro */}
+      <Box sx={{  px: 2, py: 16, mt: -10}}>
+   <Grid 
+  container 
+  spacing={2} 
+  sx={{ px: { xs: 0, sm: 5, md: 10 }, mx: "auto" }}
+>
+  {filteredPerfumes.map((perfume) => (
+    <Grid item xs={12} sm={6} md={4} lg={3} key={perfume.id}>
+      <Card
+        onClick={() => handleCardClick(perfume)}
+        onMouseEnter={() => handleMouseEnter(perfume.id)}
+        onMouseLeave={handleMouseLeave}
+        sx={{
+          
+          height: { xs: "auto", md: 420 }, // auto en mobile, fijo en desktop
+          position: "relative",
+          borderRadius: 3,
+          overflow: "hidden",
+          boxShadow: 4,
+          backgroundColor: "black",
+          display: "flex",
+          flexDirection: "column",
+          animation: `${fadeInLeft} 0.8s ease`,
+          transition: "transform 0.3s ease, box-shadow 0.3s ease",
+          cursor: "pointer",
+          "&:hover": {
+            transform: "scale(1.03)",
+            boxShadow: 6,
+          },
+        }}
+      >
+        <CardMedia
+          component="img"
+          image={
+            hoveredCard === perfume.id && perfume.imgHover
+              ? perfume.imgHover
+              : perfume.img
+          }
+          alt={perfume.title}
+          sx={{
+            height: { xs: "100%", sm: 200, md: 320 },
+            width: { xs: "100%", md: 320 },
+            objectFit: "cover",
+            objectPosition: "center center",
+            filter:
+              hoveredCard === perfume.id
+                ? "brightness(1)"
+                : "brightness(0.9)",
+            transform:
+              hoveredCard === perfume.id ? "scale(1.05)" : "none",
+            transition: "transform 0.4s ease, filter 0.4s ease",
+          }}
+        />
+{(isMobile || showContent === perfume.id) && (
+  <CardContent
+    sx={(theme) => ({
+      backgroundColor: "rgba(0, 0, 0, 0.78)",
+      color: "#FFD700",
+      display: "flex",
+      flexDirection: "column",
+      p: 2,
+      animation: `${fadeInLeft} 0.5s ease`,
+      [theme.breakpoints.up("md")]: {
+        position: "absolute",
+        bottom: 0,
+        left: 0,
+        width: "100%",
+      },
+      [theme.breakpoints.down("sm")]: {
+        position: "relative",
+        width: "100%",
+      },
+    })}
+  >
+    <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+      {perfume.title}
+    </Typography>
+    <Typography variant="body2">
+      {perfume.brand} | {perfume.description}
+    </Typography>
+
+    <Typography
+      variant="h6"
+      sx={{
+        fontWeight: "bold",
+        mt: { xs: 1, md: 0 },
+        right: { md: 20 },
+        bottom: { md: 20 },
+        position: { md: "absolute", xs: "relative" },
+        textAlign: { xs: "right", md: "unset" },
+      }}
+    >
+      ${perfume.price.toLocaleString()}
+    </Typography>
+  </CardContent>
+)}
+
+      </Card>
+    </Grid>
+  ))}
+</Grid>
+
+
+ {/* Header del filtro */}
         <Box
           sx={{
             display: "flex",
@@ -152,6 +247,7 @@ const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
             mb: 3,
             flexWrap: "wrap",
             gap: 2,
+            mt: 10
           }}
         >
           <Typography
@@ -288,108 +384,16 @@ const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
           </Stack>
         </Box>
 
-   <Grid 
-  container 
-  spacing={2} 
-  sx={{ px: { xs: 0, sm: 5, md: 10 }, mx: "auto" }}
->
-  {filteredPerfumes.map((perfume) => (
-    <Grid item xs={12} sm={6} md={4} lg={3} key={perfume.id}>
-      <Card
-        onClick={() => handleCardClick(perfume)}
-        onMouseEnter={() => handleMouseEnter(perfume.id)}
-        onMouseLeave={handleMouseLeave}
-        sx={{
-          
-          height: { xs: "auto", md: 420 }, // auto en mobile, fijo en desktop
-          position: "relative",
-          borderRadius: 3,
-          overflow: "hidden",
-          boxShadow: 4,
-          backgroundColor: "black",
-          display: "flex",
-          flexDirection: "column",
-          animation: `${fadeInLeft} 0.8s ease`,
-          transition: "transform 0.3s ease, box-shadow 0.3s ease",
-          cursor: "pointer",
-          "&:hover": {
-            transform: "scale(1.03)",
-            boxShadow: 6,
-          },
-        }}
-      >
-        <CardMedia
-          component="img"
-          image={
-            hoveredCard === perfume.id && perfume.imgHover
-              ? perfume.imgHover
-              : perfume.img
-          }
-          alt={perfume.title}
-          sx={{
-            height: { xs: "100%", sm: 200, md: 320 },
-            width: { xs: "100%", md: 320 },
-            objectFit: "cover",
-            objectPosition: "center center",
-            filter:
-              hoveredCard === perfume.id
-                ? "brightness(1)"
-                : "brightness(0.9)",
-            transform:
-              hoveredCard === perfume.id ? "scale(1.05)" : "none",
-            transition: "transform 0.4s ease, filter 0.4s ease",
-          }}
-        />
-{(isMobile || showContent === perfume.id) && (
-  <CardContent
-    sx={(theme) => ({
-      backgroundColor: "rgba(0, 0, 0, 0.78)",
-      color: "#FFD700",
-      display: "flex",
-      flexDirection: "column",
-      p: 2,
-      animation: `${fadeInLeft} 0.5s ease`,
-      [theme.breakpoints.up("md")]: {
-        position: "absolute",
-        bottom: 0,
-        left: 0,
-        width: "100%",
-      },
-      [theme.breakpoints.down("sm")]: {
-        position: "relative",
-        width: "100%",
-      },
-    })}
-  >
-    <Typography variant="h6" sx={{ fontWeight: "bold" }}>
-      {perfume.title}
-    </Typography>
-    <Typography variant="body2">
-      {perfume.brand} | {perfume.description}
-    </Typography>
-
-    <Typography
-      variant="h6"
-      sx={{
-        fontWeight: "bold",
-        mt: { xs: 1, md: 0 },
-        right: { md: 20 },
-        bottom: { md: 20 },
-        position: { md: "absolute", xs: "relative" },
-        textAlign: { xs: "right", md: "unset" },
-      }}
-    >
-      ${perfume.price.toLocaleString()}
-    </Typography>
-  </CardContent>
-)}
-
-      </Card>
-    </Grid>
-  ))}
-</Grid>
 
 
+      <Box sx={{ mt: { xs: "-200px", sm: 0 } , mb: "-200px"}}>
+  <CurvedLoop
+    marqueeText="✦ NUESTROS ✦ PRODUCTOS"
+    speed={1.5}
+    curveAmount={200}
+    interactive={false}
+  />
+</Box>
       </Box>
     </>
   );

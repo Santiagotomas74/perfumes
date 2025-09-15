@@ -54,7 +54,10 @@ export default function ProductsPage() {
           <Suspense fallback={<div style={{ color: "#FFD700" }}>Cargando perfumes...</div>}>
             <Products />
           </Suspense>
-           <Footer/>
+          <div>
+              <Footer/>
+          </div>
+         
         </div>
        
       </div>
