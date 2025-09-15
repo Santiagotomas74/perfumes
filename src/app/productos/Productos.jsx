@@ -282,6 +282,7 @@ const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
         onMouseEnter={() => handleMouseEnter(perfume.id)}
         onMouseLeave={handleMouseLeave}
         sx={{
+          
           height: { xs: "auto", md: 420 }, // auto en mobile, fijo en desktop
           position: "relative",
           borderRadius: 3,
@@ -308,7 +309,7 @@ const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
           }
           alt={perfume.title}
           sx={{
-            height: { xs: 170, sm: 200, md: 320 },
+            height: { xs: "100%", sm: 200, md: 320 },
             width: { xs: "100%", md: 320 },
             objectFit: "cover",
             objectPosition: "center center",

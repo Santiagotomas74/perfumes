@@ -35,7 +35,7 @@ const perfumes = [
     },
     {
       id: 3,
-      title: "Monarch Red Tobacco Vainilla",
+      title: "Monarch Red Tobacco ",
       description: "EDP | 100 ml",
       brand: "Emper Perfumes",
       price: 85000,
