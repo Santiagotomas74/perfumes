@@ -110,7 +110,11 @@ export default function PerfumeBanners() {
             </Typography>
             <Typography
               variant="body1"
-              sx={{ mt: 2, fontSize: "1.2rem", fontStyle: "italic" }}
+              sx={{ mt: 2, fontSize: "1.2rem", fontStyle: "italic",
+                    display: { xs: "none", sm: "block" }, // 🔑 Oculto en mobile, visible en sm+
+               }}
+          
+              
             >
               {banner.subtitle}
             </Typography>

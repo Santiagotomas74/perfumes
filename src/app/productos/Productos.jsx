@@ -9,7 +9,9 @@ import {
   Typography,
   Button,
   Box,
+  Backdrop,
   Stack,
+   CircularProgress,
 } from "@mui/material";
 import { keyframes } from "@emotion/react";
 import perfumes from "./dataProduct";
@@ -39,6 +41,7 @@ export default function PerfumesElegant() {
   const [showContent, setShowContent] = useState(null);
   const [selectedBrand, setSelectedBrand] = useState("Todos");
   const [selectedGender, setSelectedGender] = useState("Todos");
+  const [loading, setLoading] = useState(false); // ✅ Nuevo estado de carga
 
   // Marcas y géneros
   const brands = ["Todos", ...new Set(perfumes.map((p) => p.brand))];
@@ -77,28 +80,31 @@ export default function PerfumesElegant() {
   });
 
   // Click en producto
-  const handleCardClick = (perfume) => {
-    router.push(
-      `/single-product/${perfume.id}?title=${encodeURIComponent(
-        perfume.title
-      )}&brand=${encodeURIComponent(
-        perfume.brand
-      )}&description=${encodeURIComponent(
-        perfume.description
-      )}&img=${encodeURIComponent(perfume.img)}&price=${
-        perfume.price
-      }&img2=${encodeURIComponent(perfume.img2)}&img3=${encodeURIComponent(
-        perfume.img3
-      )}&img4=${encodeURIComponent(
-        perfume.img4
-      )}&nota1=${encodeURIComponent(
-        perfume.nota1
-      )}&nota2=${encodeURIComponent(
-        perfume.nota2
-      )}&nota3=${encodeURIComponent(
-        perfume.nota3
-      )}&imgHover=${encodeURIComponent(perfume.imgHover)}`
-    );
+  const handleCardClick = (perfume) =>  {
+    setLoading(true); // Activa spinner
+    setTimeout(() => {
+      router.push(
+        `/single-product/${perfume.id}?title=${encodeURIComponent(
+          perfume.title
+        )}&brand=${encodeURIComponent(
+          perfume.brand
+        )}&description=${encodeURIComponent(
+          perfume.description
+        )}&img=${encodeURIComponent(perfume.img)}&price=${
+          perfume.price
+        }&img2=${encodeURIComponent(perfume.img2)}&img3=${encodeURIComponent(
+          perfume.img3
+        )}&img4=${encodeURIComponent(
+          perfume.img4
+        )}&nota1=${encodeURIComponent(
+          perfume.nota1
+        )}&nota2=${encodeURIComponent(
+          perfume.nota2
+        )}&nota3=${encodeURIComponent(
+          perfume.nota3
+        )}&imgHover=${encodeURIComponent(perfume.imgHover)}`
+      );
+    }, 1200); // ⏳ tiempo del spinner antes de redirigir
   };
 
   const handleMouseEnter = (id) => {
@@ -115,6 +121,17 @@ const theme = useTheme();
 const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <>
+          {/* 🔄 Spinner de carga */}
+      <Backdrop
+        sx={{ color: "#FFD700", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={loading}
+      >
+        <CircularProgress size={70} thickness={4} sx={{ color: "#FFD700" }} />
+        <p>Cargando...</p>
+      </Backdrop>
+
+     
+
       <div style={{ marginTop: "-150px" }}>
         <CurvedLoop
           marqueeText="✦ NUESTROS ✦ PRODUCTOS"
