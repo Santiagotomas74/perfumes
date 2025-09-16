@@ -312,27 +312,27 @@ const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
         }}
       >
         <CardMedia
-          component="img"
-          image={
-            hoveredCard === perfume.id && perfume.imgHover
-              ? perfume.imgHover
-              : perfume.img
-          }
-          alt={perfume.title}
-          sx={{
-            height: { xs: "100%", sm: 200, md: 320 },
-            width: { xs: "100%", md: 320 },
-            objectFit: "cover",
-            objectPosition: "center center",
-            filter:
-              hoveredCard === perfume.id
-                ? "brightness(1)"
-                : "brightness(0.9)",
-            transform:
-              hoveredCard === perfume.id ? "scale(1.05)" : "none",
-            transition: "transform 0.4s ease, filter 0.4s ease",
-          }}
-        />
+  component="img"
+  image={
+    hoveredCard === perfume.id && perfume.imgHover
+      ? perfume.imgHover
+      : perfume.img
+  }
+  alt={perfume.title}
+  onContextMenu={(e) => e.preventDefault()} // 🚫 bloquea menú contextual
+  sx={{
+    height: { xs: "100%", sm: 200, md: 320 },
+    width: { xs: "100%", md: 320 },
+    objectFit: "cover",
+    objectPosition: "center center",
+    filter: hoveredCard === perfume.id ? "brightness(1)" : "brightness(0.9)",
+    transform: hoveredCard === perfume.id ? "scale(1.05)" : "none",
+    transition: "transform 0.4s ease, filter 0.4s ease",
+    userSelect: "none", // 🚫 evita selección de la imagen
+    pointerEvents: "auto",
+  }}
+/>
+
 {(isMobile || showContent === perfume.id) && (
   <CardContent
     sx={(theme) => ({

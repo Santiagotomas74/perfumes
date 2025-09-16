@@ -94,45 +94,51 @@ const router = useRouter();
       {/* Contenedor principal */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         
-        {/* Imagen principal y galería */}
-        <div className="flex flex-col space-y-4">
-          <Image
-            src={product.imgHover}
-            alt={product.title}
-            width={500}
-            height={500}
-            className="rounded-2xl shadow-md object-cover"
-          />
-          <div className="grid grid-cols-3 gap-3">
-            {product.img && (
-              <Image
-                src={product.img}
-                alt={`${product.title} img2`}
-                width={150}
-                height={150}
-                className="rounded-xl shadow-sm object-cover"
-              />
-            )}
-            {product.img2 && (
-              <Image
-                src={product.img2}
-                alt={`${product.title} img3`}
-                width={150}
-                height={150}
-                className="rounded-xl shadow-sm object-cover"
-              />
-            )}
-            {product.img3 && (
-              <Image
-                src={product.img3}
-                alt={`${product.title} img4`}
-                width={150}
-                height={150}
-                className="rounded-xl shadow-sm object-cover"
-              />
-            )}
-          </div>
-        </div>
+       {/* Imagen principal y galería */}
+<div className="flex flex-col space-y-4">
+  <Image
+    src={product.imgHover}
+    alt={product.title}
+    width={500}
+    height={500}
+    className="rounded-2xl shadow-md object-cover select-none" // 🔒 evita selección
+    onContextMenu={(e) => e.preventDefault()} // 🚫 bloquea menú contextual
+  />
+
+  <div className="grid grid-cols-3 gap-3">
+    {product.img && (
+      <Image
+        src={product.img}
+        alt={`${product.title} img2`}
+        width={150}
+        height={150}
+        className="rounded-xl shadow-sm object-cover select-none"
+        onContextMenu={(e) => e.preventDefault()}
+      />
+    )}
+    {product.img2 && (
+      <Image
+        src={product.img2}
+        alt={`${product.title} img3`}
+        width={150}
+        height={150}
+        className="rounded-xl shadow-sm object-cover select-none"
+        onContextMenu={(e) => e.preventDefault()}
+      />
+    )}
+    {product.img3 && (
+      <Image
+        src={product.img3}
+        alt={`${product.title} img4`}
+        width={150}
+        height={150}
+        className="rounded-xl shadow-sm object-cover select-none"
+        onContextMenu={(e) => e.preventDefault()}
+      />
+    )}
+  </div>
+</div>
+
              {/* Card con info del producto */}
               <MagicBento product={product} />
       </div>
