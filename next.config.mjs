@@ -63,6 +63,56 @@ const nextConfig = {
         hostname: 'leparfumpr.com',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'nrperfumesarabes.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'encrypted-tbn0.gstatic.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'static.wixstatic.com',
+        pathname: '/**',
+      },
+       {
+        protocol: 'https',
+        hostname: 'fragrances.com.ng',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'fimgs.net',
+        pathname: '/**',
+      },
+         {
+        protocol: 'https',
+        hostname: 'orientedistribuidora.com.ar',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'arabicparfums.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'imperian.co.uk',
+        pathname: '/**',
+      },
+      {
+                protocol: 'https',
+                hostname: 'oasisperfumesusa.com', // Added this line to fix the error
+                pathname: '/**',
+            },
+             {
+                protocol: 'https',
+                hostname: 'orientaldream.b-cdn.net', // New hostname added here
+                pathname: '/**',
+            },
     ],
   },
 };

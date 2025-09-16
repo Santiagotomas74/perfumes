@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from 'motion/react';
-import { Children, cloneElement, useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 import './Dock.css';
 
@@ -37,7 +37,7 @@ function DockItem({ children, className = '', onClick, mouseX, spring, distance,
       role="button"
       aria-haspopup="true"
     >
-      {Children.map(children, child => cloneElement(child, { isHovered }))}
+      {children}
     </motion.div>
   );
 }
@@ -47,10 +47,10 @@ function DockLabel({ children, className = '', ...rest }) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const unsubscribe = isHovered.on('change', latest => {
+    const unsubscribe = isHovered?.on?.('change', latest => {
       setIsVisible(latest === 1);
     });
-    return () => unsubscribe();
+    return () => unsubscribe?.();
   }, [isHovered]);
 
   return (

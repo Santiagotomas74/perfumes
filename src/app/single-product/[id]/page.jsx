@@ -4,7 +4,8 @@ import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import Beams from './Beams';
 import Dock from './Dock';
-import { VscHome, VscArchive, VscAccount, VscSettingsGear } from 'react-icons/vsc';
+import { VscHome, VscArchive} from 'react-icons/vsc';
+import FaWhatsapp from '@mui/icons-material/WhatsApp';
 import { useRouter } from 'next/navigation';
 import MagicBento from "./MagicBento"
 import { useEffect } from "react";
@@ -29,8 +30,13 @@ const router = useRouter();
   const items = [
     { icon: <VscHome size={18} />, label: 'Inicio', onClick: () => router.push('/')  },
     { icon: <VscArchive size={18} />, label: 'Productos', onClick: () => router.push('/productos') },
-    { icon: <VscAccount size={18} />, label: 'Contactanos', onClick: () => alert('Profile!') }
+   { 
+    icon: <FaWhatsapp size={20} color="#25D366" />, 
+    label: 'Contactanos', 
+    onClick: () => window.open("https://wa.me/541123089572", "_blank") 
+  }
   ];
+ 
   const product = {
     id: searchParams.get('id'),
     title: searchParams.get('title'),
@@ -144,7 +150,7 @@ const router = useRouter();
       </div>
           
     </div>
- 
+              
      </>
   );
 }
